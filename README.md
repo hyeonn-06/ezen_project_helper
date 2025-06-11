@@ -136,3 +136,7 @@ npm install
 ```
 
 ### 3. 프론트엔드 개발 서버 실행
+
+```powershell
+npm start
+```
