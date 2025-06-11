@@ -89,6 +89,10 @@ filelock
 
 # Deep Learning Framework (for HuggingFace Embeddings)
 torch
+
+# Web Crawling & RDB
+bs4
+oracledb
 ```
 
 ```powershell
