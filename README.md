@@ -9,12 +9,14 @@
 
 ## 담당 모듈
 
-- **김도현 (Spring Boot)**
+- **김도현 (Spring Boot, React)**
     - JWT 토큰 기반 회원 관리 모듈 및 권한 처리 구현
     - Python(RAG) - Spring Boot - React 서버 간 API 연동 및 통신 아키텍처 설계
-- **백윤지 (Python, Spring Boot)**
+    - 프론트엔드 기능 개발 및 아키텍처 구현
+- **백윤지 (Python, Spring Boot, React)**
     - Python 기반 RAG 시스템 및 API 서버 총괄 구축
     - Spring Boot 기반 공지사항 게시판 및 정책 목록/검색 기능 개발
+    - 프론트엔드 기능 개발 및 아키텍처 구현
 - **박병건 (Spring Boot)**
     - Q&A 게시판 기능 개발
     - 프로젝트 전체 RDB 설계 및 구축
