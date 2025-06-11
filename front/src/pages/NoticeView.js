@@ -50,7 +50,7 @@ const NoticeView = () => {
   }, [notice_no]);
 
   const handleDelete = async () => {
-    if (!window.confirm("정말로 해당당 공지사항을 삭제하시겠습니까?")) {
+    if (!window.confirm("정말로 해당 공지사항을 삭제하시겠습니까?")) {
       return;
     }
     setActionError(null);

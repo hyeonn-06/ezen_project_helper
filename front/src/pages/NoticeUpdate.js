@@ -122,7 +122,7 @@ if (!notice_no || (error && !title && !content && !loading) ) {
 
   return (
     <div className="max-w-3xl mx-auto mt-10 px-4">
-      <h2 className="text-2xl font-bold mb-6">공지사항 글쓰기</h2>
+      <h2 className="text-2xl font-bold mb-6">공지사항 글수정</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block font-semibold mb-1">제목</label>
