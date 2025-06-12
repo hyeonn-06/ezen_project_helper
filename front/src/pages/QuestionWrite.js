@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getTokenFromCookie } from "../utils/CookieUtils";
 import axios from "axios";
 import { useAuth } from "../contexts/AuthContext";
+import { API_IP } from '../config';
   
 export function QuestionWrite() {
   const {memberId} = useAuth();
@@ -21,7 +22,7 @@ export function QuestionWrite() {
     }
     try {
       const res = await axios.post(
-        'http://localhost:80/member/qna/write.do',
+        `http://${API_IP}:80/member/qna/write.do`,
         { title, content, member_id:memberId },
         {
           headers: { Authorization: `Bearer ${accessToken}`, 'X-Refresh-Token': refreshToken, 'Content-Type': 'application/json' }

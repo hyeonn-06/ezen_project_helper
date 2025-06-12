@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { API_IP } from '../config';
 
 function NoticeList() {
   const {memberId} = useAuth();
@@ -20,7 +21,7 @@ function NoticeList() {
     const fetchData = async (page = 1) => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:80/user/notice/list.do?page=${page}&perPageNum=10`);
+        const response = await axios.get(`http://${API_IP}/user/notice/list.do?page=${page}&perPageNum=10`);
         if (response.data && response.data.list) {
           setList(response.data.list);
           setPageObject(response.data.pageObject);

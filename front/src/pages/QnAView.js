@@ -5,6 +5,7 @@ import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import dayjs from "dayjs";
 import { getTokenFromCookie } from "../utils/CookieUtils";
+import { API_IP } from '../config';
 
 function QnAView() {
   const { memberId } = useAuth();
@@ -24,7 +25,7 @@ function QnAView() {
     const fetchView = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost/user/qna/view.do?question_no=${question_no}`);
+        const res = await axios.get(`http://${API_IP}/user/qna/view.do?question_no=${question_no}`);
         setQuestionVO(res.data.questionVO);
         setAnswerVO(res.data.answerVO);
       } catch (err) {
@@ -45,7 +46,7 @@ function QnAView() {
     if (!window.confirm("정말로 해당 게시글을 삭제하시겠습니까?"))
       return;
     try {
-      const res = await axios.post(`http://localhost/member/qna/delete.do`,
+      const res = await axios.post(`http://${API_IP}/member/qna/delete.do`,
         {
           question_no: question_no,
           member_id: memberId
@@ -65,7 +66,7 @@ function QnAView() {
     if (!window.confirm("정말로 해당 답변을 삭제하시겠습니까?"))
       return;
     try {
-      const res = await axios.post(`http://localhost/admin/qna/delete.do`,
+      const res = await axios.post(`http://${API_IP}/admin/qna/delete.do`,
         {question_no},
         {
           headers: { Authorization: `Bearer ${accessToken}`, 'X-Refresh-Token': refreshToken, 'Content-Type': 'application/json' }

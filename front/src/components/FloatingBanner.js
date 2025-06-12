@@ -1,5 +1,3 @@
-import React from "react";
-
 const FloatingBanner = () => {
   const handleClick = () => {
     alert("중요 공지사항 영역으로 이동 예정입니다. - 수정 필요");

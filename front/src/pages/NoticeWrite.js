@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getTokenFromCookie } from "../utils/CookieUtils";
 import axios from "axios";
+import { API_IP } from '../config';
 
 function NoticeWrite() {
   const [title, setTitle] = useState('');
@@ -21,7 +22,7 @@ function NoticeWrite() {
 
     try {
       const response = await axios.post(
-        'http://localhost:80/admin/notice/write.do',
+        `http://${API_IP}:80/admin/notice/write.do`,
         { title, content },
         {
             headers: {Authorization: `Bearer ${accessToken}`, 'X-Refresh-Token': refreshToken, 'Content-Type': 'application/json'}

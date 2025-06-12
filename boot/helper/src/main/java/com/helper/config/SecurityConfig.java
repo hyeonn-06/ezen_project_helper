@@ -74,7 +74,7 @@ public class SecurityConfig {
         // 허용할 오리진(프론트엔드 URL) 목록
         // React 앱의 실제 주소를 정확히 입력합니다. (예: "http://localhost:3000")
         // 운영 환경에서는 실제 배포된 프론트엔드 도메인을 사용해야 합니다.
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://127.0.0.1:3000"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://192.168.0.231:3000"));
         
         // 허용할 HTTP 메소드 목록 (OPTIONS는 Pre-flight 요청을 위해 필수)
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));

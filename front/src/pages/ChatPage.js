@@ -2,8 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import { getTokenFromCookie } from "../utils/CookieUtils";
 import PolicyList from "./PolicyList";
-import { useAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { API_IP } from '../config';
 
 function ChatPage() {
   const [messages, setMessages] = useState([
@@ -31,7 +30,7 @@ function ChatPage() {
   // 전송 버튼 클릭
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const requestUrl = "http://localhost/member/chatbot/ask.do"
+    const requestUrl = `http://${API_IP}/member/chatbot/ask.do`
     if (question.length > 0 && isAnswering === false) {
       setMessages((prev) => [...prev, { sender: "user", text: question }]);
       setQuestion("");

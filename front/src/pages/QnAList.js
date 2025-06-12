@@ -3,6 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
+import { API_IP } from '../config';
 
 function QnAList() {
   const { isLoggedIn } = useAuth();
@@ -15,7 +16,7 @@ function QnAList() {
   useEffect(() => {
     const fetchData = async (page) => {
       try {
-        const res = await axios.get(`http://localhost:80/user/qna/list.do?page=${page}&perPageNum=10`);
+        const res = await axios.get(`http://${API_IP}:80/user/qna/list.do?page=${page}&perPageNum=10`);
         if (res.data && res.data.list) {
           setList(res.data.list);
           setPageObject(res.data.pageObject);

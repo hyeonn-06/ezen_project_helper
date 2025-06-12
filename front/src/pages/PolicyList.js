@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getTokenFromCookie } from "../utils/CookieUtils";
+import { API_IP } from '../config';
 
 function PolicyList() {
 
@@ -41,7 +42,7 @@ function PolicyList() {
         }
 
         console.log("params= ", params)
-        const response = await axios.get(`http://localhost:80/member/policy/list.do?${params.toString()}`,
+        const response = await axios.get(`http://${API_IP}:80/member/policy/list.do?${params.toString()}`,
           {
             withCredentials: true
           }

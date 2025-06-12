@@ -1,6 +1,7 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
+import { API_IP } from "../config";
 
 const NoticeSection = () => {
   const [list, setList] = useState([]);
@@ -12,7 +13,7 @@ const NoticeSection = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:80/user/notice/list.do?page=1&perPageNum=2`
+          `http://${API_IP}/user/notice/list.do?page=1&perPageNum=2`
         );
 
         if (response.data && response.data.list) {

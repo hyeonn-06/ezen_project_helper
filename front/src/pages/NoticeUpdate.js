@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getTokenFromCookie } from "../utils/CookieUtils";
 import axios from "axios";
+import { API_IP } from '../config';
 
 function NoticeUpdate() {
   const [title, setTitle] = useState('');
@@ -29,7 +30,7 @@ function NoticeUpdate() {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get(`http://localhost:80/user/notice/view.do?notice_no=${notice_no}`);
+        const response = await axios.get(`http://${API_IP}:80/user/notice/view.do?notice_no=${notice_no}`);
         if (response.data) {
           setTitle(response.data.title);
           setContent(response.data.content);
@@ -73,7 +74,7 @@ function NoticeUpdate() {
 
     try {
       const response = await axios.post(
-        'http://localhost:80/admin/notice/update.do',
+        `http://${API_IP}:80/admin/notice/update.do`,
         { notice_no: notice_no ,title, content },
         {
             headers: {Authorization: `Bearer ${accessToken}`, 'X-Refresh-Token': refreshToken, 'Content-Type': 'application/json'}

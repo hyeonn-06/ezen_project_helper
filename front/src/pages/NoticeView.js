@@ -4,6 +4,7 @@ import { getTokenFromCookie } from "../utils/CookieUtils";
 import axios from "axios";
 import dayjs from "dayjs";
 import { useAuth } from "../contexts/AuthContext";
+import { API_IP } from '../config';
 
 const NoticeView = () => {
   const { memberId } = useAuth();
@@ -30,7 +31,7 @@ const NoticeView = () => {
       try {
         setLoading(true);
         setLoadError(null);
-        const response = await axios.get(`http://localhost/user/notice/view.do?notice_no=${notice_no}`);
+        const response = await axios.get(`http://${API_IP}/user/notice/view.do?notice_no=${notice_no}`);
         setVo(response.data);
       } catch (err) {
         if (err.response) {
@@ -62,7 +63,7 @@ const NoticeView = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:80/admin/notice/delete.do`,
+        `http://${API_IP}:80/admin/notice/delete.do`,
         { notice_no: notice_no },
         {
           headers: { Authorization: `Bearer ${accessToken}`, 'X-Refresh-Token': refreshToken, 'Content-Type': 'application/json' }

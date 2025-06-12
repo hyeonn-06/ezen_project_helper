@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { API_IP } from '../config';
 
 // 1. AuthContext 생성
 // 기본값은 { memberId: null, isLoggedIn: false, login: () => {}, logout: () => {}, checkAuthStatus: () => {} }
@@ -20,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   // 인증 상태를 확인하는 함수
   const checkAuthStatus = async () => {
-    const requestUrl = "http://localhost/auth/getId.do";
+    const requestUrl = `http://${API_IP}/auth/getId.do`;
     try {
       const res = await axios.get(requestUrl, { withCredentials: true });
       if (res.data) {
@@ -54,7 +55,7 @@ export const AuthProvider = ({ children }) => {
 
   // 로그아웃 처리 함수
   const logout = async () => {
-    const requestUrl = "http://localhost/auth/logout.do";
+    const requestUrl = `http://${API_IP}/auth/logout.do`;
     try {
       // 서버에 로그아웃 요청
       const response = await axios.post(requestUrl, { member_id: memberId }, { withCredentials: true });

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { getTokenFromCookie } from "../utils/CookieUtils";
+import { API_IP } from '../config';
 
 const QuestionUpdate = () => {
     const {memberId} = useAuth();
@@ -24,7 +25,7 @@ const QuestionUpdate = () => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const res = await axios.get(`http://localhost/user/qna/view.do?question_no=${question_no}`);
+                const res = await axios.get(`http://${API_IP}/user/qna/view.do?question_no=${question_no}`);
                 setTitle(res.data.questionVO.title);
                 setContent(res.data.questionVO.content);
             } catch {
@@ -45,7 +46,7 @@ const QuestionUpdate = () => {
         }
         try {
             const res = await axios.post(
-                "http://localhost/member/qna/update.do",
+                `http://${API_IP}/member/qna/update.do`,
                 { question_no,title, content, member_id: memberId },
                 {
                     headers: { Authorization: `Bearer ${accessToken}`, 'X-Refresh-Token': refreshToken, 'Content-Type': 'application/json' }

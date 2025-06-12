@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_IP } from '../config';
 
 function SignUpPage() {
   const memberIdRegEx = /^[A-Za-z][A-Za-z0-9]{3,19}$/;
@@ -17,7 +18,7 @@ function SignUpPage() {
   // 아이디 중복 체크 버튼 클릭
   const handleCheckMemberId = async (e) => {
     e.preventDefault();
-    const requestUrl = "http://localhost/auth/validateMemberId.do";
+    const requestUrl = `http://${API_IP}/auth/validateMemberId.do`;
     // 아이디를 입력하지 않은 경우
     if (!member_id.trim()) {
       alert("아이디를 입력해주세요.");
@@ -47,7 +48,7 @@ function SignUpPage() {
   // 회원가입 버튼 클릭
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const requestUrl = "http://localhost/auth/signUp.do";
+    const requestUrl = `http://${API_IP}/auth/signUp.do`;
     if(!isMemberIdReadOnly){
       alert("아이디 중복 확인 이후 클릭해주시기 바랍니다.");
     }

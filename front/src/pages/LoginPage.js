@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../contexts/AuthContext';
+import { API_IP } from '../config';
 
 function LoginPage() {
   const [member_id, setMember_id] = useState("");
@@ -11,7 +12,7 @@ function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const requestUrl = "http://localhost/auth/login.do";
+    const requestUrl = `http://${API_IP}/auth/login.do`;
     try {
       const response = await axios.post(requestUrl, {member_id, pw}, {
         withCredentials: true

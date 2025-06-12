@@ -3,6 +3,7 @@ import { getTokenFromCookie } from "../utils/CookieUtils";
 import dayjs from "dayjs";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_IP } from "../config";
 
 const AnswerUpdate = () => {
     const [content, setContent] = useState("");
@@ -20,7 +21,7 @@ const AnswerUpdate = () => {
         const fetchView = async () => {
             try {
                 setLoading(true);
-                const res = await axios.get(`http://localhost/user/qna/view.do?question_no=${question_no}`);
+                const res = await axios.get(`http://${API_IP}/user/qna/view.do?question_no=${question_no}`);
                 setQuestionVO(res.data.questionVO);
                 setContent(res.data.answerVO.content);
             } catch (err) {
@@ -40,7 +41,7 @@ const AnswerUpdate = () => {
         }
         try {
             const res = await axios.post(
-                `http://localhost/admin/qna/update.do`,
+                `http://${API_IP}/admin/qna/update.do`,
                 { question_no, content },
                 {
                     headers: { Authorization: `Bearer ${accessToken}`, 'X-Refresh-Token': refreshToken, 'Content-Type': 'application/json' }
