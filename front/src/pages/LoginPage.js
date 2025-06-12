@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../contexts/AuthContext';
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 function LoginPage() {
   const [member_id, setMember_id] = useState("");

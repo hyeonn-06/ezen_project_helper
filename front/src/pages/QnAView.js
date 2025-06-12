@@ -5,7 +5,7 @@ import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import dayjs from "dayjs";
 import { getTokenFromCookie } from "../utils/CookieUtils";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 function QnAView() {
   const { memberId } = useAuth();

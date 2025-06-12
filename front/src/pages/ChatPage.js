@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import { getTokenFromCookie } from "../utils/CookieUtils";
 import PolicyList from "./PolicyList";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 function ChatPage() {
   const [messages, setMessages] = useState([

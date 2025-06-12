@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 function NoticeList() {
   const {memberId} = useAuth();

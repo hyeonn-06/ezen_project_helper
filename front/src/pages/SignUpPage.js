@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 function SignUpPage() {
   const memberIdRegEx = /^[A-Za-z][A-Za-z0-9]{3,19}$/;

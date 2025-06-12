@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getTokenFromCookie } from "../utils/CookieUtils";
 import axios from "axios";
 import { useAuth } from "../contexts/AuthContext";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
   
 export function QuestionWrite() {
   const {memberId} = useAuth();

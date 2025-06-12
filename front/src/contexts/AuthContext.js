@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 // 1. AuthContext 생성
 // 기본값은 { memberId: null, isLoggedIn: false, login: () => {}, logout: () => {}, checkAuthStatus: () => {} }

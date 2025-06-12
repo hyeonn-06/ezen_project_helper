@@ -4,7 +4,7 @@ import { getTokenFromCookie } from "../utils/CookieUtils";
 import axios from "axios";
 import dayjs from "dayjs";
 import { useAuth } from "../contexts/AuthContext";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 const NoticeView = () => {
   const { memberId } = useAuth();

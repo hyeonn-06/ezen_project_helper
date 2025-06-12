@@ -3,7 +3,7 @@ import { getTokenFromCookie } from "../utils/CookieUtils";
 import dayjs from "dayjs";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 const AnswerWrite = () => {
     const [content, setContent] = useState("");

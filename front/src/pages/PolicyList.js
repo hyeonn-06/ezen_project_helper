@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getTokenFromCookie } from "../utils/CookieUtils";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 function PolicyList() {
 

@@ -243,7 +243,7 @@ if __name__ == "__main__":
             print(f"[{i+1}] 정책 처리 중 오류 - ID: {policy_id} / 오류: {e}")
             continue
 
-    conn.commit()
+    # conn.commit()
     cursor.close()
     conn.close()
 

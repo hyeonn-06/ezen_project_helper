@@ -1,7 +1,7 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
-import { API_IP } from "../config";
+import { API_IP } from "../Config";
 
 const NoticeSection = () => {
   const [list, setList] = useState([]);

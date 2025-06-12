@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getTokenFromCookie } from "../utils/CookieUtils";
 import axios from "axios";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 function NoticeWrite() {
   const [title, setTitle] = useState('');

@@ -3,7 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
-import { API_IP } from '../config';
+import { API_IP } from '../Config';
 
 function QnAList() {
   const { isLoggedIn } = useAuth();
