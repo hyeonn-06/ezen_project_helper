@@ -79,6 +79,9 @@ langchain-google-genai
 langchain-huggingface
 langchain-text-splitters
 
+# Embedding
+sentence-transformers
+
 # VectorDB
 chromadb
 

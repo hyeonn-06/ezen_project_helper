@@ -245,7 +245,8 @@ class RAGPipeline:
                 split_docs_for_db = split_documents(text_splitter, docs_to_process)
                 logger.info(f"{len(split_docs_for_db)}개의 문서 청크를 DB에 반영할 예정입니다.")
 
-            if db_action == "create_new" and self.vectorstore is None:
+            if (db_action == "create_new" and self.vectorstore is None) or \
+                (split_docs_for_db and self.vectorstore is None):
                 if not split_docs_for_db and db_action == "create_new":
                     logger.warning("새 DB 생성 요청되었으나 처리할 문서가 없습니다. 빈 DB가 생성될 수 있습니다.")
 
@@ -264,9 +265,20 @@ class RAGPipeline:
                 if self.vectorstore is None:
                     logger.error("벡터 저장소를 초기화할 수 없습니다.")
                     raise ValueError("벡터 저장소 초기화 실패.")
-                self.vectorstore.persist()
 
+        # 파일에 변경 사항(추가/수정/삭제)이 있었는지 먼저 확인
         if files_to_load_for_db or deleted_file_paths:
+
+            # 1. 벡터 DB 저장 (객체가 있을 때만)
+            if self.vectorstore:
+                logger.info("벡터 저장소의 변경사항을 디스크에 최종 저장합니다.")
+                self.vectorstore.persist()
+            else:
+                # 방어 코드
+                logger.warning("파일 변경이 있었으나 vectorstore 객체가 없어 DB 저장을 건너뜁니다.")
+
+            # 2. 메타데이터 저장
+            logger.info("파일 변경 내역 메타데이터를 저장합니다.")
             final_metadata_to_save = update_metadata_after_processing(
                 files_to_load_for_db,
                 current_files_hashes,

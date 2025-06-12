@@ -114,7 +114,7 @@ async def search_rag_system(request_data: SearchRequest):
     member_id = request_data.member_id
     question_text = request_data.question
 
-    logger.info(f"'/search' 엔드포인트 수신 - 사용자 ID: {member_id}, 질문: {question_text}")
+    logger.info(f"'/ask' 엔드포인트 수신 - 사용자 ID: {member_id}, 질문: {question_text}")
 
     # startup_event에서 rag_pipeline_instance 생성에 실패했으면 (기본값이 None임)
     if rag_pipeline_instance is None:
