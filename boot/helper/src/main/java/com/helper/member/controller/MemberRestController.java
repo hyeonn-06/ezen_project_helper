@@ -76,7 +76,7 @@ public class MemberRestController {
 		requestBody.put("member_id", userDetails.getUsername());
 		requestBody.put("question", vo.getQuestion());
 		
-		String fastApiUrl = "http://localhost:8000/search";
+		String fastApiUrl = "http://localhost:8000/ask";
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
