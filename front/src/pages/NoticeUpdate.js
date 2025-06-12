@@ -147,7 +147,7 @@ if (!notice_no || (error && !title && !content && !loading) ) {
         <div className="flex justify-end gap-2">
           <button
             type="button"
-            onClick={() => navigate("/notice")}
+            onClick={() => navigate(`/user/notice/view?notice_no=${notice_no}`)}
             className="px-4 py-2 border rounded"
           >
             취소

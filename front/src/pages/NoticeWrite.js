@@ -75,7 +75,7 @@ function NoticeWrite() {
         <div className="flex justify-end gap-2">
           <button
             type="button"
-            onClick={() => navigate("/notice")}
+            onClick={() => navigate("/user/notice/list")}
             className="px-4 py-2 border rounded"
           >
             취소
