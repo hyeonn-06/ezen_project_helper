@@ -1,4 +1,4 @@
-# **ezen_project_helper**
+![image](https://github.com/user-attachments/assets/f1d9012f-41ab-4b80-8054-dbc2c3f3a2a7)# **ezen_project_helper**
 
 
 ## 대한민국 청년 정책 AI Agent
@@ -9,22 +9,21 @@
 ## 담당 모듈
 
 - **김도현 (Spring Boot, React)**
-    - JWT 토큰 기반 회원 관리 모듈 및 권한 처리 구현
-    - Python(RAG) - Spring Boot - React 서버 간 API 연동 및 통신 아키텍처 설계
-    - 프론트엔드 기능 개발 및 아키텍처 구현
+    - 회원 관리 및 권한 처리(JWT)
+    - 서버 연결 관리
+    - 프론트엔드 로그인 상태 관리
 - **백윤지 (Python, Spring Boot, React)**
-    - Python 기반 RAG 시스템 및 API 서버 총괄 구축
-    - Spring Boot 기반 공지사항 게시판 및 정책 목록/검색 기능 개발
-    - 프론트엔드 기능 개발 및 아키텍처 구현
+    - RAG 시스템 및 API 서버 구축
+    - 공지사항 게시판 기능 및 아키텍처
+    - 정책 목록&검색 기능 및 아키텍처
 - **박병건 (Spring Boot)**
-    - Q&A 게시판 기능 개발
-    - 프로젝트 전체 RDB 설계 및 구축
+    - RDB 설계 및 구축
+    - Q&A 게시판 기능
 - **지세하 (React)**
-    - React와 Tailwind CSS 기반의 프론트엔드 UI/UX 설계
-    - 전체 페이지 레이아웃 및 재사용 가능한 공통 컴포넌트 시스템 개발
+    - 프론트엔드 UI/UX 개발
+    - UI/UX 공통 컴포넌트 개발
 - **최도경 (Python)**
-    - 청년 정책 데이터 수집 및 정제 파이프라인 구축
-    - 수집된 데이터의 DB 자동 적재(Auto-Commit) 스크립트 개발
+    - 데이터 수집 및 정제 파이프라인
 
 ---
 
