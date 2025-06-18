@@ -1,6 +1,3 @@
-![image](https://github.com/user-attachments/assets/f1d9012f-41ab-4b80-8054-dbc2c3f3a2a7)# **ezen_project_helper**
-
-
 ## 대한민국 청년 정책 AI Agent
 
 - 프로젝트 기간: 2025/5/26 ~ 2025/6/11
